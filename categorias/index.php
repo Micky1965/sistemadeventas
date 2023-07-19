@@ -34,7 +34,7 @@ include('../app/controllers/categorias/listado_de_categoria.php');
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Categorías Registradas</h3>
@@ -49,15 +49,9 @@ include('../app/controllers/categorias/listado_de_categoria.php');
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            <center>Nro</center>
-                                        </th>
-                                        <th>
-                                            <center>Nombre de la categoría</center>
-                                        </th>
-                                        <th>
-                                            <center>Acciones</center>
-                                        </th>
+                                        <th><center>Nro</center></th>
+                                        <th><center>Nombre de la categoría</center></th>
+                                        <th><center>Acciones</center></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -263,9 +257,6 @@ include('../app/controllers/categorias/listado_de_categoria.php');
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>
-
-
-
 
 
 <!-- modal para registrar categorias -->

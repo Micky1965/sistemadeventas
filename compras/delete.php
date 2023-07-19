@@ -29,7 +29,7 @@ include ('../app/controllers/compras/cargar_compra.php');
                         <div class="col-md-12">
                             <div class="card card-danger">
                                 <div class="card-header">
-                                    <h3 class="card-title">¿Está seguro de eliminar la compra?</h3>
+                                    <h3 class="card-title">¿Seguro de eliminar la compra ?</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i></button>
@@ -119,14 +119,6 @@ include ('../app/controllers/compras/cargar_compra.php');
                                             </div>
 
 
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="">Imagen del producto</label>
-                                                <center>
-                                                    <img src="<?php echo $URL."/almacen/img_productos/".$imagen;?>" id="img_producto" width="50%" alt="">
-                                                </center>
-                                            </div>
                                         </div>
                                     </div>
 
@@ -260,12 +252,12 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 var stock_actual = '<?= $stock; ?>';
 
                                                 Swal.fire({
-                                                    title: '¿Está seguro de eliminar la compra?',
+                                                    title: '¿Seguro de eliminar la compra?',
                                                     icon: 'question',
                                                     showCancelButton: true,
                                                     confirmButtonColor: '#3085d6',
                                                     cancelButtonColor: '#d33',
-                                                    confirmButtonText: 'Si deseo eliminar'
+                                                    confirmButtonText: 'Si, Eliminar'
                                                 }).then((result) => {
                                                     if (result.isConfirmed) {
                                                         Swal.fire(

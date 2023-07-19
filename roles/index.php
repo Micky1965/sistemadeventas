@@ -26,7 +26,7 @@ include('../app/controllers/roles/listado_de_roles.php');
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-9">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Roles registrado</h3>
@@ -111,32 +111,6 @@ include('../app/controllers/roles/listado_de_roles.php');
             "responsive": true,
             "lengthChange": true,
             "autoWidth": false,
-            buttons: [{
-                    extend: 'collection',
-                    text: 'Reportes',
-                    orientation: 'landscape',
-                    buttons: [{
-                        text: 'Copiar',
-                        extend: 'copy',
-                    }, {
-                        extend: 'pdf'
-                    }, {
-                        extend: 'csv'
-                    }, {
-                        extend: 'excel'
-                    }, {
-                        text: 'Imprimir',
-                        extend: 'print'
-                    }]
-                },
-                {
-                    extend: 'colvis',
-                    text: 'Visor de columnas',
-                    collectionLayout: 'fixed three-column'
-                }
-            ],
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
-</script>
-
 </script>

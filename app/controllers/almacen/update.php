@@ -24,13 +24,13 @@ $image_text = $_POST['image_text'];
 
 
 if($_FILES['image']['name'] != null){
-    //echo "hay imagen nueva";
+    //echo "hay image nueva";
     $nombreDelArchivo = date("Y-m-d-h-i-s");
     $image_text = $nombreDelArchivo."__".$_FILES['image']['name'];
     $location = "../../../almacen/img_productos/".$image_text;
     move_uploaded_file($_FILES['image']['tmp_name'],$location);
 }else{
-   // echo "no hay imagen";
+   // echo "no hay image";
 }
 
 
@@ -43,7 +43,6 @@ $sentencia = $pdo->prepare("UPDATE tb_almacen
         precio_compra=:precio_compra,
         precio_venta=:precio_venta,
         fecha_ingreso=:fecha_ingreso,
-        imagen=:imagen,
         id_usuario=:id_usuario,
         id_categoria=:id_categoria,
         fyh_actualizacion=:fyh_actualizacion 
@@ -57,7 +56,6 @@ $sentencia->bindParam('stock_maximo',$stock_maximo);
 $sentencia->bindParam('precio_compra',$precio_compra);
 $sentencia->bindParam('precio_venta',$precio_venta);
 $sentencia->bindParam('fecha_ingreso',$fecha_ingreso);
-$sentencia->bindParam('imagen',$image_text);
 $sentencia->bindParam('id_usuario',$id_usuario);
 $sentencia->bindParam('id_categoria',$id_categoria);
 $sentencia->bindParam('fyh_actualizacion',$fechaHora);

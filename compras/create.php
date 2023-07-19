@@ -32,7 +32,7 @@ include('../app/controllers/compras/listado_de_compras.php');
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-info">
+                            <div class="card card-primary">
                                 <div class="card-header">
                                     <h3 class="card-title">Ingrese los Datos</h3>
                                     <div class="card-tools">
@@ -393,7 +393,7 @@ include('../app/controllers/compras/listado_de_compras.php');
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Stock</label>
+                                                <label for="">Stock Actual</label>
                                                 <input type="number" id="stock_actual" class="form-control" style="background-color:navajowhite;text-align: center" disabled>
                                             </div>
                                         </div>

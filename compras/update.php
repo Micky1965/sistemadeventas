@@ -1,12 +1,10 @@
 <?php
-include ('../app/config.php');
-include ('../layout/sesion.php');
-
-include ('../layout/parte1.php');
-
-include ('../app/controllers/almacen/listado_de_productos.php');
-include ('../app/controllers/proveedores/listado_de_proveedores.php');
-include ('../app/controllers/compras/cargar_compra.php');
+include('../app/config.php');
+include('../layout/sesion.php');
+include('../layout/parte1.php');
+include('../app/controllers/almacen/listado_de_productos.php');
+include('../app/controllers/proveedores/listado_de_proveedores.php');
+include('../app/controllers/compras/cargar_compra.php');
 
 ?>
 
@@ -18,17 +16,14 @@ include ('../app/controllers/compras/cargar_compra.php');
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1 class="m-0">Actualización de la compra</h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
+                </div> <!-- /.col -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container-fluid -->
+    </div> <!-- /.content-header -->
 
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-9">
                     <div class="row">
@@ -40,15 +35,13 @@ include ('../app/controllers/compras/cargar_compra.php');
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                         </button>
                                     </div>
-
                                 </div>
 
                                 <div class="card-body" style="display: block;">
                                     <div style="display: flex">
                                         <h5>Datos del producto </h5>
                                         <div style="width: 20px"></div>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#modal-buscar_producto">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar_producto">
                                             <i class="fa fa-search"></i>
                                             Buscar producto
                                         </button>
@@ -66,97 +59,112 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                         <div class="table table-responsive">
                                                             <table id="example1" class="table table-bordered table-striped table-sm">
                                                                 <thead>
-                                                                <tr>
-                                                                    <th><center>Nro</center></th>
-                                                                    <th><center>Selecionar</center></th>
-                                                                    <th><center>Código</center></th>
-                                                                    <th><center>Categoría</center></th>
-                                                                    <th><center>Imagen</center></th>
-                                                                    <th><center>Nombre</center></th>
-                                                                    <th><center>Descripción</center></th>
-                                                                    <th><center>Stock</center></th>
-                                                                    <th><center>Precio compra</center></th>
-                                                                    <th><center>Precio venta</center></th>
-                                                                    <th><center>Fecha compra</center></th>
-                                                                    <th><center>Usuario</center></th>
-                                                                </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <center>Nro</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Selecionar</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Código</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Categoría</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Nombre</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Descripción</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Stock</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Precio compra</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Precio venta</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Fecha compra</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Usuario</center>
+                                                                        </th>
+                                                                    </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                <?php
-                                                                $contador = 0;
-                                                                foreach ($productos_datos as $productos_dato){
-                                                                    $id_producto = $productos_dato['id_producto']; ?>
-                                                                    <tr>
-                                                                        <td><?php echo $contador = $contador + 1; ?></td>
-                                                                        <td>
-                                                                            <button class="btn btn-info" id="btn_selecionar<?php echo $id_producto;?>">
-                                                                                Selecionar
-                                                                            </button>
-                                                                            <script>
-                                                                                $('#btn_selecionar<?php echo $id_producto;?>').click(function () {
-
-
-                                                                                    var id_producto = "<?php echo $productos_dato['id_producto'];?>";
-                                                                                    $('#id_producto').val(id_producto);
-
-                                                                                    var codigo = "<?php echo $productos_dato['codigo'];?>";
-                                                                                    $('#codigo').val(codigo);
-
-                                                                                    var categoria = "<?php echo $productos_dato['categoria'];?>";
-                                                                                    $('#categoria').val(categoria);
-
-                                                                                    var nombre = "<?php echo $productos_dato['nombre'];?>";
-                                                                                    $('#nombre_producto').val(nombre);
-
-                                                                                    var email = "<?php echo $productos_dato['email'];?>";
-                                                                                    $('#usuario_producto').val(email);
-
-                                                                                    var descripcion = "<?php echo $productos_dato['descripcion'];?>";
-                                                                                    $('#descripcio_producto').val(descripcion);
-
-                                                                                    var stock = "<?php echo $productos_dato['stock'];?>";
-                                                                                    $('#stock').val(stock);
-                                                                                    $('#stock_actual').val(stock);
-
-                                                                                    var stock_minimo = "<?php echo $productos_dato['stock_minimo'];?>";
-                                                                                    $('#stock_minimo').val(stock_minimo);
-
-                                                                                    var stock_maximo = "<?php echo $productos_dato['stock_maximo'];?>";
-                                                                                    $('#stock_maximo').val(stock_maximo);
-
-                                                                                    var precio_compra = "<?php echo $productos_dato['precio_compra'];?>";
-                                                                                    $('#precio_compra').val(precio_compra);
-
-                                                                                    var precio_venta = "<?php echo $productos_dato['precio_venta'];?>";
-                                                                                    $('#precio_venta').val(precio_venta);
-
-                                                                                    var fecha_ingreso = "<?php echo $productos_dato['fecha_ingreso'];?>";
-                                                                                    $('#fecha_ingreso').val(fecha_ingreso);
-
-                                                                                    var ruta_img = "<?php echo $URL.'/almacen/img_productos/'.$productos_dato['imagen'];?>";
-                                                                                    $('#img_producto').attr({src: ruta_img });
-
-                                                                                    $('#modal-buscar_producto').modal('toggle');
-
-                                                                                });
-                                                                            </script>
-                                                                        </td>
-                                                                        <td><?php echo $productos_dato['codigo'];?></td>
-                                                                        <td><?php echo $productos_dato['categoria'];?></td>
-                                                                        <td>
-                                                                            <img src="<?php echo $URL."/almacen/img_productos/".$productos_dato['imagen'];?>" width="50px" alt="asdf">
-                                                                        </td>
-                                                                        <td><?php echo $productos_dato['nombre'];?></td>
-                                                                        <td><?php echo $productos_dato['descripcion'];?></td>
-                                                                        <td><?php echo $productos_dato['stock'];?></td>
-                                                                        <td><?php echo $productos_dato['precio_compra'];?></td>
-                                                                        <td><?php echo $productos_dato['precio_venta'];?></td>
-                                                                        <td><?php echo $productos_dato['fecha_ingreso'];?></td>
-                                                                        <td><?php echo $productos_dato['email'];?></td>
-                                                                    </tr>
                                                                     <?php
-                                                                }
-                                                                ?>
+                                                                    $contador = 0;
+                                                                    foreach ($productos_datos as $productos_dato) {
+                                                                        $id_producto = $productos_dato['id_producto']; ?>
+                                                                        <tr>
+                                                                            <td><?php echo $contador = $contador + 1; ?></td>
+                                                                            <td>
+                                                                                <button class="btn btn-info" id="btn_selecionar<?php echo $id_producto; ?>">
+                                                                                    Selecionar
+                                                                                </button>
+                                                                                <script>
+                                                                                    $('#btn_selecionar<?php echo $id_producto; ?>').click(function() {
+
+
+                                                                                        var id_producto = "<?php echo $productos_dato['id_producto']; ?>";
+                                                                                        $('#id_producto').val(id_producto);
+
+                                                                                        var codigo = "<?php echo $productos_dato['codigo']; ?>";
+                                                                                        $('#codigo').val(codigo);
+
+                                                                                        var categoria = "<?php echo $productos_dato['categoria']; ?>";
+                                                                                        $('#categoria').val(categoria);
+
+                                                                                        var nombre = "<?php echo $productos_dato['nombre']; ?>";
+                                                                                        $('#nombre_producto').val(nombre);
+
+                                                                                        var email = "<?php echo $productos_dato['email']; ?>";
+                                                                                        $('#usuario_producto').val(email);
+
+                                                                                        var descripcion = "<?php echo $productos_dato['descripcion']; ?>";
+                                                                                        $('#descripcio_producto').val(descripcion);
+
+                                                                                        var stock = "<?php echo $productos_dato['stock']; ?>";
+                                                                                        $('#stock').val(stock);
+                                                                                        $('#stock_actual').val(stock);
+
+                                                                                        var stock_minimo = "<?php echo $productos_dato['stock_minimo']; ?>";
+                                                                                        $('#stock_minimo').val(stock_minimo);
+
+                                                                                        var stock_maximo = "<?php echo $productos_dato['stock_maximo']; ?>";
+                                                                                        $('#stock_maximo').val(stock_maximo);
+
+                                                                                        var precio_compra = "<?php echo $productos_dato['precio_compra']; ?>";
+                                                                                        $('#precio_compra').val(precio_compra);
+
+                                                                                        var precio_venta = "<?php echo $productos_dato['precio_venta']; ?>";
+                                                                                        $('#precio_venta').val(precio_venta);
+
+                                                                                        var fecha_ingreso = "<?php echo $productos_dato['fecha_ingreso']; ?>";
+                                                                                        $('#fecha_ingreso').val(fecha_ingreso);
+
+                                                                                        $('#modal-buscar_producto').modal('toggle');
+
+                                                                                    });
+                                                                                </script>
+                                                                            </td>
+                                                                            <td><?php echo $productos_dato['codigo']; ?></td>
+                                                                            <td><?php echo $productos_dato['categoria']; ?></td>
+                                                                            <td><?php echo $productos_dato['nombre']; ?></td>
+                                                                            <td><?php echo $productos_dato['descripcion']; ?></td>
+                                                                            <td><?php echo $productos_dato['stock']; ?></td>
+                                                                            <td><?php echo $productos_dato['precio_compra']; ?></td>
+                                                                            <td><?php echo $productos_dato['precio_venta']; ?></td>
+                                                                            <td><?php echo $productos_dato['fecha_ingreso']; ?></td>
+                                                                            <td><?php echo $productos_dato['n_usuario']; ?></td>
+                                                                        </tr>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
                                                                 </tbody>
                                                                 </tfoot>
                                                             </table>
@@ -172,7 +180,7 @@ include ('../app/controllers/compras/cargar_compra.php');
 
                                     <hr>
                                     <div class="row" style="font-size: 12px">
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -247,20 +255,12 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="">Fecha de ingreso:</label>
-                                                        <input type="date" style="font-size: 12px" value="<?= $fecha_ingreso; ?>" name="fecha_ingreso" id="fecha_ingreso" class="form-control" disabled>
+                                                        <input type="date" style="font-size: 14px" value="<?= $fecha_ingreso; ?>" name="fecha_ingreso" id="fecha_ingreso" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                             </div>
 
 
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="">Imagen del producto</label>
-                                                <center>
-                                                    <img src="<?php echo $URL."/almacen/img_productos/".$imagen;?>" id="img_producto" width="50%" alt="">
-                                                </center>
-                                            </div>
                                         </div>
                                     </div>
 
@@ -268,8 +268,7 @@ include ('../app/controllers/compras/cargar_compra.php');
                                     <div style="display: flex">
                                         <h5>Datos del proveedor </h5>
                                         <div style="width: 20px"></div>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#modal-buscar_proveedor">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-buscar_proveedor">
                                             <i class="fa fa-search"></i>
                                             Buscar proveedor
                                         </button>
@@ -287,63 +286,60 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                         <div class="table table-responsive">
                                                             <table id="example2" class="table table-bordered table-striped table-sm">
                                                                 <thead>
-                                                                <tr>
-                                                                    <th><center>Nro</center></th>
-                                                                    <th><center>Selecionar</center></th>
-                                                                    <th><center>Nombre del proveedor</center></th>
-                                                                    <th><center>Teléfono</center></th>
-                                                                    <th><center>Empresa</center></th>
-                                                                    <th><center>Email</center></th>
-                                                                    <th><center>Dirección</center></th>
-                                                                </tr>
+                                                                    <tr>
+                                                                        <th><center>Nro</center></th>
+                                                                        <th><center>Selecionar</center></th>
+                                                                        <th><center>Nombre del proveedor</center></th>
+                                                                        <th><center>Teléfono</center></th>
+                                                                        <th><center>Email</center></th>
+                                                                        <th><center>Dirección</center></th>
+                                                                    </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                <?php
-                                                                $contador = 0;
-                                                                foreach ($proveedores_datos as $proveedores_dato){
-                                                                    $id_proveedor = $proveedores_dato['id_proveedor'];
-                                                                    $nombre_proveedor = $proveedores_dato['nombre_proveedor']; ?>
-                                                                    <tr>
-                                                                        <td><center><?php echo $contador = $contador + 1;?></center></td>
-                                                                        <td>
-                                                                            <button class="btn btn-info" id="btn_selecionar_proveedor<?php echo $id_proveedor;?>">
-                                                                                Selecionar
-                                                                            </button>
-                                                                            <script>
-                                                                                $('#btn_selecionar_proveedor<?php echo $id_proveedor;?>').click(function () {
-
-                                                                                    var id_proveedor = '<?php echo $id_proveedor; ?>';
-                                                                                    $('#id_proveedor').val(id_proveedor);
-
-                                                                                    var nombre_proveedor = '<?php echo $nombre_proveedor; ?>';
-                                                                                    $('#nombre_proveedor').val(nombre_proveedor);
-
-                                                                                    var telefono_proveedor = '<?php echo $proveedores_dato['telefono']; ?>';
-                                                                                    $('#telefono').val(telefono_proveedor);
-
-                                                                                    var empresa_proveedor = '<?php echo $proveedores_dato['empresa']; ?>';
-                                                                                    $('#empresa').val(empresa_proveedor);
-
-                                                                                    var email_proveedor = '<?php echo $proveedores_dato['email']; ?>';
-                                                                                    $('#email').val(email_proveedor);
-
-                                                                                    var direccion_proveedor = '<?php echo $proveedores_dato['direccion']; ?>';
-                                                                                    $('#direccion').val(direccion_proveedor);
-
-                                                                                    $('#modal-buscar_proveedor').modal('toggle');
-
-                                                                                });
-                                                                            </script>
-                                                                        </td>
-                                                                        <td><?php echo $nombre_proveedor;?></td>
-                                                                        <td><?php echo $proveedores_dato['telefono'];?></td>
-                                                                        <td><?php echo $proveedores_dato['empresa'];?></td>
-                                                                        <td><?php echo $proveedores_dato['email'];?></td>
-                                                                        <td><?php echo $proveedores_dato['direccion'];?></td>
-                                                                    </tr>
                                                                     <?php
-                                                                }
-                                                                ?>
+                                                                    $contador = 0;
+                                                                    foreach ($proveedores_datos as $proveedores_dato) {
+                                                                        $id_proveedor = $proveedores_dato['id_proveedor'];
+                                                                        $nombre_proveedor = $proveedores_dato['nombre_proveedor']; ?>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <center><?php echo $contador = $contador + 1; ?></center>
+                                                                            </td>
+                                                                            <td>
+                                                                                <button class="btn btn-info" id="btn_selecionar_proveedor<?php echo $id_proveedor; ?>">
+                                                                                    Selecionar
+                                                                                </button>
+                                                                                <script>
+                                                                                    $('#btn_selecionar_proveedor<?php echo $id_proveedor; ?>').click(function() {
+
+                                                                                        var id_proveedor = '<?php echo $id_proveedor; ?>';
+                                                                                        $('#id_proveedor').val(id_proveedor);
+
+                                                                                        var nombre_proveedor = '<?php echo $nombre_proveedor; ?>';
+                                                                                        $('#nombre_proveedor').val(nombre_proveedor);
+
+                                                                                        var telefono_proveedor = '<?php echo $proveedores_dato['telefono']; ?>';
+                                                                                        $('#telefono').val(telefono_proveedor);
+
+                                                                                        var email_proveedor = '<?php echo $proveedores_dato['email']; ?>';
+                                                                                        $('#email').val(email_proveedor);
+
+                                                                                        var direccion_proveedor = '<?php echo $proveedores_dato['direccion']; ?>';
+                                                                                        $('#direccion').val(direccion_proveedor);
+
+                                                                                        $('#modal-buscar_proveedor').modal('toggle');
+
+                                                                                    });
+                                                                                </script>
+                                                                            </td>
+                                                                            <td><?php echo $nombre_proveedor; ?></td>
+                                                                            <td><?php echo $proveedores_dato['telefono']; ?></td>
+                                                                            <td><?php echo $proveedores_dato['email']; ?></td>
+                                                                            <td><?php echo $proveedores_dato['direccion']; ?></td>
+                                                                        </tr>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -360,14 +356,14 @@ include ('../app/controllers/compras/cargar_compra.php');
 
                                     <div class="container-fluid" style="font-size: 12px">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <input type="text" value="<?= $id_proveedor_tabla; ?>" id="id_proveedor" hidden>
                                                     <label for="">Nombre del proveedor </label>
                                                     <input type="text" value="<?= $nombre_proveedor_tabla; ?>" id="nombre_proveedor" class="form-control" disabled>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Teléfono</label>
                                                     <input type="number" value="<?= $telefono_proveedor; ?>" id="telefono" class="form-control" disabled>
@@ -376,20 +372,13 @@ include ('../app/controllers/compras/cargar_compra.php');
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="">Empresa </label>
-                                                    <input type="text" value="<?= $empresa_proveedor; ?>" id="empresa" class="form-control" disabled>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Email</label>
                                                     <input type="email" value="<?= $email_proveedor; ?>" id="email" class="form-control" disabled>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Dirección</label>
                                                     <textarea name="" id="direccion" cols="30" rows="3" class="form-control" disabled><?= $direccion_proveedor; ?></textarea>
@@ -406,7 +395,6 @@ include ('../app/controllers/compras/cargar_compra.php');
                     </div>
                 </div>
                 <div class="col-md-3">
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-outline card-primary">
@@ -453,8 +441,8 @@ include ('../app/controllers/compras/cargar_compra.php');
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Stock actual</label>
-                                                <input type="text" value="<?= $stock=$stock-$cantidad; ?>" style="background-color: #fff819;text-align: center" id="stock_actual" class="form-control" disabled>
+                                                <label for="">Stock Actual</label>
+                                                <input type="text" value="<?= $stock = $stock - $cantidad; ?>" style="background-color: #fff819; text-align: center" id="stock_actual" class="form-control" disabled>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -469,16 +457,17 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 <input type="number" value="<?= $cantidad; ?>" id="cantidad_compra" style="text-align: center" class="form-control">
                                             </div>
                                             <script>
-                                                $('#cantidad_compra').keyup(function () {
+                                                $('#cantidad_compra').keyup(function() {
                                                     sumacantidades();
                                                 });
                                                 sumacantidades();
-                                                function sumacantidades (){
+
+                                                function sumacantidades() {
                                                     //alert('estamos presionando el input');
                                                     var stock_actual = $('#stock_actual').val();
                                                     var stock_compra = $('#cantidad_compra').val();
 
-                                                    var total = parseInt(stock_actual)+ parseInt(stock_compra);
+                                                    var total = parseInt(stock_actual) + parseInt(stock_compra);
                                                     $('#stock_total').val(total);
                                                 }
                                             </script>
@@ -500,7 +489,7 @@ include ('../app/controllers/compras/cargar_compra.php');
                                         </div>
                                     </div>
                                     <script>
-                                        $('#btn_actualizar_compra').click(function () {
+                                        $('#btn_actualizar_compra').click(function() {
 
                                             var id_compra = '<?php echo $id_compra; ?>';
                                             var id_producto = $('#id_producto').val();
@@ -508,31 +497,40 @@ include ('../app/controllers/compras/cargar_compra.php');
                                             var fecha_compra = $('#fecha_compra').val();
                                             var id_proveedor = $('#id_proveedor').val();
                                             var comprobante = $('#comprobante').val();
-                                            var id_usuario = '<?php echo $id_usuario_sesion;?>';
+                                            var id_usuario = '<?php echo $id_usuario_sesion; ?>';
                                             var precio_compra = $('#precio_compra_controlador').val();
                                             var cantidad_compra = $('#cantidad_compra').val();
-
                                             var stock_total = $('#stock_total').val();
 
-                                            if(id_producto == ""){
+                                            if (id_producto == "") {
                                                 $('#id_producto').focus();
                                                 alert("Debe llenar todos los campos productos");
-                                            }else if(fecha_compra == ""){
+                                            } else if (fecha_compra == "") {
                                                 $('#fecha_compra').focus();
                                                 alert("Debe llenar todos los campos fecha compra");
-                                            }else if(comprobante == ""){
+                                            } else if (comprobante == "") {
                                                 $('#comprobante').focus();
                                                 alert("Debe llenar todos los campos comprobante");
-                                            }else if (precio_compra == ""){
+                                            } else if (precio_compra == "") {
                                                 $('#precio_compra_controlador').focus();
                                                 alert("Debe llenar todos los campos precio compra");
-                                            }else if( cantidad_compra == ""){
+                                            } else if (cantidad_compra == "") {
                                                 $('#cantidad_compra').focus();
                                                 alert("Debe llenar todos los campos cantidades");
-                                            }
-                                            else{
+                                            } else {
                                                 var url = "../app/controllers/compras/update.php";
-                                                $.get(url,{id_compra:id_compra,id_producto:id_producto,nro_compra:nro_compra,fecha_compra:fecha_compra,id_proveedor:id_proveedor,comprobante:comprobante,id_usuario:id_usuario,precio_compra:precio_compra,cantidad_compra:cantidad_compra,stock_total:stock_total},function (datos) {
+                                                $.get(url, {
+                                                    id_compra: id_compra,
+                                                    id_producto: id_producto,
+                                                    nro_compra: nro_compra,
+                                                    fecha_compra: fecha_compra,
+                                                    id_proveedor: id_proveedor,
+                                                    comprobante: comprobante,
+                                                    id_usuario: id_usuario,
+                                                    precio_compra: precio_compra,
+                                                    cantidad_compra: cantidad_compra,
+                                                    stock_total: stock_total
+                                                }, function(datos) {
                                                     $('#respuesta_update').html(datos);
                                                 });
                                             }
@@ -540,19 +538,12 @@ include ('../app/controllers/compras/cargar_compra.php');
                                         });
                                     </script>
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div id="respuesta_update"></div>
-
                     </div>
-
-
                 </div>
             </div>
-
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -560,13 +551,13 @@ include ('../app/controllers/compras/cargar_compra.php');
 </div>
 <!-- /.content-wrapper -->
 
-<?php include ('../layout/mensajes.php'); ?>
-<?php include ('../layout/parte2.php'); ?>
+<?php include('../layout/mensajes.php'); ?>
+<?php include('../layout/parte2.php'); ?>
 
 
 
 <script>
-    $(function () {
+    $(function() {
         $("#example1").DataTable({
             "pageLength": 5,
             "language": {
@@ -588,13 +579,15 @@ include ('../app/controllers/compras/cargar_compra.php');
                     "previous": "Anterior"
                 }
             },
-            "responsive": true, "lengthChange": true, "autoWidth": false,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
 
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 
 
-    $(function () {
+    $(function() {
         $("#example2").DataTable({
             "pageLength": 5,
             "language": {
@@ -616,9 +609,10 @@ include ('../app/controllers/compras/cargar_compra.php');
                     "previous": "Anterior"
                 }
             },
-            "responsive": true, "lengthChange": true, "autoWidth": false,
+            "responsive": true,
+            "lengthChange": true,
+            "autoWidth": false,
 
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>
-

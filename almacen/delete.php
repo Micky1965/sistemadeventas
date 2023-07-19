@@ -47,7 +47,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                     <form action="../app/controllers/almacen/delete.php" method="post">
                                         <input type="text" name="id_producto" value="<?php echo $id_producto_get;?>" hidden>
                                         <div class="row">
-                                            <div class="col-md-9">
+                                            <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -129,24 +129,11 @@ include ('../app/controllers/almacen/cargar_producto.php');
 
 
                                             </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">Imagen del producto</label>
-                                                    <center>
-                                                        <img src="<?php echo $URL."/almacen/img_productos/".$imagen;?>" width="100%" alt="">
-                                                    </center>
-                                                </div>
-                                            </div>
                                         </div>
-
-
-
-
-
                                         <hr>
                                         <div class="form-group">
                                             <a href="index.php" class="btn btn-secondary">Cancelar</a>
-                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Borrar producto</button>
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</button>
                                         </div>
                                     </form>
                                 </div>

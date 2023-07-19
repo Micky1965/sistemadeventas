@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 15/2/2023
- * Time: 19:35
- */
 
 include ('../../config.php');
 
@@ -72,7 +66,7 @@ if($sentencia->execute()){
     $pdo->rollBack();
 
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo actualizar en la base de datos";
+    $_SESSION['mensaje'] = "Error al actualizar en la base de datos";
     $_SESSION['icono'] = "error";
     //  header('Location: '.$URL.'/categorias');
     ?>

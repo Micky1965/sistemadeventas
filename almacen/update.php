@@ -48,7 +48,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                         <input type="text" value="<?php echo $id_producto_get; ?>" name="id_producto" hidden>
 
                                         <div class="row">
-                                            <div class="col-md-9">
+                                            <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
@@ -141,46 +141,8 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">Imagen del producto</label>
-                                                    <input type="file" name="image" class="form-control" id="file">
-                                                    <input type="text" name="image_text" value="<?php echo $imagen; ?>" hidden>
-                                                    <br>
-                                                    <output id="list" style="">
-                                                        <img src="<?php echo $URL."/almacen/img_productos/".$imagen; ?>" width="100%" alt="">
-                                                    </output>
-                                                    <script>
-                                                        function archivo(evt) {
-                                                            var files = evt.target.files; // FileList object
-                                                            // Obtenemos la imagen del campo "file".
-                                                            for (var i = 0, f; f = files[i]; i++) {
-                                                                //Solo admitimos imágenes.
-                                                                if (!f.type.match('image.*')) {
-                                                                    continue;
-                                                                }
-                                                                var reader = new FileReader();
-                                                                reader.onload = (function (theFile) {
-                                                                    return function (e) {
-                                                                        // Insertamos la imagen
-                                                                        document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="100%" title="', escape(theFile.name), '"/>'].join('');
-                                                                    };
-                                                                })(f);
-                                                                reader.readAsDataURL(f);
-                                                            }
-                                                        }
-                                                        document.getElementById('file').addEventListener('change', archivo, false);
-                                                    </script>
-                                                </div>
                                             </div>
                                         </div>
-
-
-
-
 
                                         <hr>
                                         <div class="form-group">

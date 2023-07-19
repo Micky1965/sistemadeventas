@@ -22,5 +22,4 @@ foreach ($productos_datos as $productos_dato){
     $precio_compra = $productos_dato['precio_compra'];
     $precio_venta = $productos_dato['precio_venta'];
     $fecha_ingreso = $productos_dato['fecha_ingreso'];
-    $imagen = $productos_dato['imagen'];
 }

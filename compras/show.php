@@ -16,11 +16,10 @@ include ('../app/controllers/compras/cargar_compra.php');
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1 class="m-0">Compra nro <?php echo $nro_compra; ?></h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+                </div>          <!-- /.col -->
+            </div>          <!-- /.row -->
+        </div>          <!-- /.container-fluid -->
+    </div>          <!-- /.content-header -->
 
 
     <!-- Main content -->
@@ -72,13 +71,13 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label for="">Usuario</label>
-                                                        <input type="text" value="<?= $nombres_usuario; ?>" class="form-control" id="usuario_producto" disabled>
+                                                        <input type="text" value="<?= $nombres_usuario; ?>" class="form-control" id="n_usuario_pro" disabled>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-8">
                                                     <div class="form-group">
                                                         <label for="">Descripción del producto:</label>
-                                                        <textarea name="descripcion" id="descripcio_producto" cols="30" rows="2" class="form-control" disabled><?= $descripcion; ?></textarea>
+                                                        <textarea name="descripcion" id="descripcion_producto" cols="30" rows="2" class="form-control" disabled><?= $descripcion; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +117,7 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="">Fecha de ingreso:</label>
-                                                        <input type="date" value="<?= $fecha_ingreso; ?>" name="fecha_ingreso" id="fecha_ingreso" class="form-control" disabled>
+                                                        <input type="date" style="font-size: 14px" value="<?= $fecha_ingreso; ?>" name="fecha_ingreso" id="fecha_ingreso" class="form-control" disabled>
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,7 +136,7 @@ include ('../app/controllers/compras/cargar_compra.php');
                                                 <div class="form-group">
                                                     <input type="text" id="id_proveedor" hidden>
                                                     <label for="">Nombre del proveedor </label>
-                                                    <input type="text" value="<?= $nombre_proveedor; ?>" id="nombre_proveedor" class="form-control" disabled>
+                                                    <input type="text" value="<?= $nombre_proveedor_tabla; ?>" id="nombre_proveedor" class="form-control" disabled>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -236,24 +235,14 @@ include ('../app/controllers/compras/cargar_compra.php');
                                     <hr>
 
                                 </div>
-
                             </div>
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-            </div>
-
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+            </div>    <!-- /.row -->
+        </div>      <!-- /.container-fluid -->
+    </div>        <!-- /.content -->
+</div>          <!-- /.content-wrapper -->
 
 <?php include ('../layout/mensajes.php'); ?>
 <?php include ('../layout/parte2.php'); ?>

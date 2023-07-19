@@ -29,7 +29,7 @@ if($sentencia->execute()){
 
     session_start();
     // echo "se registro correctamente";
-    $_SESSION['mensaje'] = "Se borro la compra de la manera correcta";
+    $_SESSION['mensaje'] = "Compra Eliminada";
     $_SESSION['icono'] = "success";
     // header('Location: '.$URL.'/categorias/');
     ?>
@@ -39,11 +39,10 @@ if($sentencia->execute()){
     <?php
 }else{
 
-
     $pdo->rollBack();
 
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo actualizar en la base de datos";
+    $_SESSION['mensaje'] = "Error al actualizar la base de datos";
     $_SESSION['icono'] = "error";
     //  header('Location: '.$URL.'/categorias');
     ?>
