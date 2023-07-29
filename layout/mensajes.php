@@ -8,7 +8,7 @@ if( (isset($_SESSION['mensaje'])) && (isset($_SESSION['icono'])) ){
         Swal.fire({
             position: 'top-end',
             icon: '<?php echo $icono; ?>',
-            title: '<?php echo $respuesta;?>',
+            title: '<?php echo $respuesta; ?>',
             showConfirmButton: false,
             timer: 2200
         })

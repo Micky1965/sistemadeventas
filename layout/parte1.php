@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <img src="<?php echo $URL;?>/img/newspaper4.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?php echo $nombres_sesion;?></a>
+                    <a href="#" class="d-block"><?php echo $n_usuario_sesion;?></a>
                 </div>
             </div>
 
@@ -105,30 +105,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
 
+
                     <li class="nav-item ">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-address-card"></i>
+                            <i class="nav-icon fas fa-cash-register"></i>
                             <p>
-                                Roles
+                                Ventas
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?php echo $URL;?>/roles/create.php" class="nav-link">
-                                    <i class="fas fa-user nav-icon"></i>
-                                    <p>Nuevo Rol</p>
+                                <a href="<?php echo $URL;?>/ventas/create.php" class="nav-link">
+                                    <i class="nav-icon fas fa-cash-register"></i>
+                                    <p>Nueva Venta</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo $URL;?>/roles" class="nav-link">
-                                    <i class="fas fa-address-book nav-icon"></i>
-                                    <p>Listado de Roles</p>
+                                <a href="<?php echo $URL;?>/ventas" class="nav-link">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>Listado de Ventas</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
 
+                    
                     <li class="nav-item ">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-newspaper"></i>
@@ -153,6 +155,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
 
+
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-user-friends"></i>
+                            <p>
+                                Clientes
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/clientes" class="nav-link">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>Listado de Clientes</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-plane"></i>
+                            <p>
+                                Proveedores
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/Proveedores" class="nav-link">
+                                    <i class="nav-icon fas fa-address-book"></i>
+                                    <p>Listado de Proveedores</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                     
                     <li class="nav-item ">
                         <a href="#" class="nav-link active">
@@ -181,6 +221,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     
                     <li class="nav-item ">
                         <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-address-card"></i>
+                            <p>
+                                Roles
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/roles/create.php" class="nav-link">
+                                    <i class="fas fa-user nav-icon"></i>
+                                    <p>Nuevo Rol</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?php echo $URL;?>/roles" class="nav-link">
+                                    <i class="fas fa-address-book nav-icon"></i>
+                                    <p>Listado de Roles</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-tags"></i>
                             <p>
                                 Categorías
@@ -198,28 +263,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
 
                     
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-plane"></i>
-                            <p>
-                                Proveedores
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?php echo $URL;?>/Proveedores" class="nav-link">
-                                    <i class="nav-icon fas fa-address-book"></i>
-                                    <p>Listado de Proveedores</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-
-                    
                     <li class="nav-item">
-                        <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" class="nav-link" style="background-color: #ca0a0b">
+                        <a href="<?php echo $URL;?>/app/controllers/login/cerrar_sesion.php" class="nav-link active" style="background-color: #E51323">
                             <i class="nav-icon fas fa-power-off"></i>
                             <p>
                                 Cerrar Sesión

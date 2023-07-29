@@ -1,8 +1,8 @@
 <!-- Main Footer -->
 <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Created by Micky <i class="fas fa-satellite-dish text-danger"></i> <a href="http://MagInformatica.com/" 
-                                target="_blank" rel="noopener noreferrer">MagInformática</a> <?php echo date("d-m-Y"); ?> </strong>
+    <strong>Created by Micky <i class="fas fa-satellite-dish text-danger"></i> <a href="https://wa.me/+54" 
+                                target="_blank" rel="noopener noreferrer">3874629413</a></strong>
 </footer>
 </div>
 <!-- ./wrapper -->

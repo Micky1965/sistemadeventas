@@ -6,7 +6,7 @@ $n_usuario = $_POST['n_usuario'];
 $password_user = $_POST['password_user'];
 
 $contador = 0;
-$sql = "SELECT * FROM tb_usuarios WHERE n_usuario = '$n_usuario' AND password_user = '$password_user';";
+$sql = "SELECT * FROM tb_usuarios WHERE n_usuario = '$n_usuario' AND password_user = '$password_user'";
 $query = $pdo->prepare($sql);
 $query->execute();
 $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);

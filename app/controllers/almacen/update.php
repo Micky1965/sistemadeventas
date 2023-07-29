@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 30/1/2023
- * Time: 18:47
- */
 
 include ('../../config.php');
 
@@ -20,18 +14,6 @@ $precio_compra = $_POST['precio_compra'];
 $precio_venta = $_POST['precio_venta'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $id_producto = $_POST['id_producto'];
-$image_text = $_POST['image_text'];
-
-
-if($_FILES['image']['name'] != null){
-    //echo "hay image nueva";
-    $nombreDelArchivo = date("Y-m-d-h-i-s");
-    $image_text = $nombreDelArchivo."__".$_FILES['image']['name'];
-    $location = "../../../almacen/img_productos/".$image_text;
-    move_uploaded_file($_FILES['image']['tmp_name'],$location);
-}else{
-   // echo "no hay image";
-}
 
 
 $sentencia = $pdo->prepare("UPDATE tb_almacen

@@ -452,8 +452,8 @@ include('../app/controllers/compras/listado_de_compras.php');
                         </div>
                         <div id="respuesta_create"></div>
                     </div>
+                
                 </div>
-
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>

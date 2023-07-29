@@ -26,6 +26,7 @@
     session_start();
     if(isset($_SESSION['mensaje'])){
         $respuesta = $_SESSION['mensaje']; ?>
+        
         <script>
             Swal.fire({
                 position: 'top-end',

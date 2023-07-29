@@ -15,15 +15,6 @@ $precio_venta = $_POST['precio_venta'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 
 
-$image = $_POST['image'];
-
-$nombreDelArchivo = date("d-m-Y-h-i-s");
-$filename = $nombreDelArchivo."__".$_FILES['image']['name'];
-$location = "../../../almacen/img_productos/".$filename;
-
-move_uploaded_file($_FILES['image']['tmp_name'],$location);
-
-
 $sentencia = $pdo->prepare("INSERT INTO tb_almacen
        ( codigo, nombre, descripcion, stock, stock_minimo, stock_maximo, precio_compra, precio_venta, fecha_ingreso, id_usuario, id_categoria, fyh_creacion) 
 VALUES (:codigo,:nombre,:descripcion,:stock,:stock_minimo,:stock_maximo,:precio_compra,:precio_venta,:fecha_ingreso,:id_usuario,:id_categoria,:fyh_creacion)");
